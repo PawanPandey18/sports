@@ -99,31 +99,35 @@
 //     }
     
 // }
+const images = [
+    { image: 'bat.jpeg' },
+    { image: 'boot1.jpeg' },
+    { image: 'boot2.jpeg' }
+];
 
-        const images = [
-            { image: 'bat.jpeg' },
-            { image: 'boot.jpeg' }
-        ];
+let startIndex = 0;
+const imagesHtml = document.getElementById('images');
 
-        let startIndex = 0;
-        const imagesHtml = document.getElementById('images');
+function showImage() {
+    imagesHtml.innerHTML = `
+        <img src="${images[startIndex].image}" alt="Image" class="w-full h-full object-cover absolute top-0 left-0">
+    `;
+}
 
-        function showImage() {
-            imagesHtml.innerHTML = `
-                <img src="${images[startIndex].image}" alt="Image" class="w-full h-full object-cover absolute top-0 left-0">
-            `;
-        }
+function nextImage() {
+    startIndex = (startIndex + 1) % images.length;
+    showImage();
+}
 
-        function nextImage() {
-            startIndex = (startIndex + 1) % images.length;
-            showImage();
-        }
+function prevImage() {
+    startIndex = (startIndex - 1 + images.length) % images.length;
+    showImage();
+}
 
-        function prevImage() {
-            startIndex = (startIndex - 1 + images.length) % images.length;
-            showImage();
-        }
+showImage();
 
-        // Initial display
-        showImage();
+function Slid(a) {
+    let 
+    
+}
 

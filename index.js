@@ -126,8 +126,20 @@ function prevImage() {
 
 showImage();
 
-function Slid(a) {
-    let 
-    
+let data = document.querySelectorAll(".items div");
+
+function slid(current) {
+    console.log(data);
+    data.forEach(div => {
+        div.classList.remove("active");
+
+        if (div.classList.contains(current)) {
+            div.classList.add("active");
+        }
+    });   
 }
 
+slid('home');
+
+// let Upper =document.querySelectorAll('.Scrolling section');
+// window.addEventListener('scroll',function)
